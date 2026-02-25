@@ -1,10 +1,6 @@
-<!-- section = seção que tem um tema específico -->
-<!-- adicionar uma section com galeria interativa, com js, linha index 104 -->
-<!-- btn = abreviação de button -->
-
-=======================
-JavaScript
-=======================
+===========================================
+FUNDAMENTOS DE JAVASCRIPT
+===========================================
 
 <--
 Criar uma lista em javascript usa-se o array => const/let nomeDoArray = [] ;
@@ -13,17 +9,16 @@ importar da pasta => "./nome-da-pasta/nome do arquivo"
 -->
 
 <--
-para linkar uma id do index ao js usa-se o dom => documment.getElementById/class/nome("id da tag").
+para linkar uma id do index ao js usa-se o dom => document.getElementById/class/nome("id da tag").
 
 para adicionar a função do evento que terá esse item => addEventListener("evento", uma função)
 
-a função neste caso será uma função sem nome, então usa-se arrowFunction: () => {}
+a função neste caso será uma função sem nome (anônima), então usa-se arrowFunction: () => {}
 
 document.getElementById("btn-galeria").addEventListener("click", () => {
-const galeria = document.getElementById("imagens-galeria");
+    const galeria = document.getElementById("imagens-galeria");
 })
 -->
-
 
 ===========================================
 LÓGICA DA GALERIA DINÂMICA
@@ -37,21 +32,17 @@ LÓGICA DA GALERIA DINÂMICA
    - 'galeria.appendChild(img)' coloca a imagem dentro da seção da grade.
 
 ===========================================
-
-===========================================
 MÉTODOS DE ARRAY - JAVASCRIPT
 
 --- ITERAÇÃO E TRANSFORMAÇÃO (NÃO ALTERAM O ORIGINAL) ---
-
 - map(): Cria um novo array transformando cada elemento.
 - filter(): Cria um novo array apenas com os elementos que passam em um teste.
 - reduce(): Reduz o array a um único valor acumulado (ex: soma total).
 - forEach(): Executa uma função para cada elemento (sem retorno).
-- flat(): Achata arrays aninhados (sub-arrays) em um único nível.
+- flat(): Achata arrays aninhados em um único nível.
 - flatMap(): Mapeia cada elemento e depois achata o resultado.
 
 --- BUSCA E VERIFICAÇÃO ---
-
 - find(): Retorna o primeiro elemento que satisfaz a condição.
 - findIndex(): Retorna o índice do primeiro elemento que satisfaz a condição.
 - includes(): Verifica se o array contém um valor (retorna true/false).
@@ -60,88 +51,89 @@ MÉTODOS DE ARRAY - JAVASCRIPT
 - indexOf(): Retorna o primeiro índice onde um valor pode ser encontrado.
 
 --- MANIPULAÇÃO E MUTAÇÃO (ALTERAM O ARRAY ORIGINAL) ---
-
 - push(): Adiciona elementos ao final.
 - pop(): Remove o último elemento.
 - unshift(): Adiciona elementos ao início.
 - shift(): Remove o primeiro elemento.
 - splice(): Adiciona, remove ou substitui elementos em posições específicas.
-- sort(): Ordena os elementos (padrão é alfabético).
+- sort(): Ordena os elementos.
 - reverse(): Inverte a ordem dos elementos.
 
 --- UTILITÁRIOS E FORMATAÇÃO ---
-
-- slice(): Copia uma parte do array para um novo array (não altera o original).
-- join(): Une todos os elementos em uma string, separados por um delimitador.
+- slice(): Copia uma parte do array para um novo array.
+- join(): Une todos os elementos em uma string.
 - concat(): Une dois ou mais arrays em um novo array.
-- Array.from(): Cria um array a partir de um objeto iterável ou array-like.
+- Array.from(): Cria um array a partir de um objeto iterável.
 
 ===========================================
-O método addEventListener('evento', funcao)
+EVENTOS - addEventListener('evento', funcao)
 
-no JavaScript é usado para monitorar interações, como cliques (click), movimentos do mouse (mousemove), entrada de teclado (keydown), carregamento (load), ou formulários (submit) [4, 6, 12]. Ele permite anexar múltiplas funções a um único elemento sem usar on`.
+Usado para monitorar interações. Permite anexar múltiplas funções a um único elemento.
 
-Aqui estão os tipos mais comuns de eventos organizados por categoria:
+🐭 Eventos de Mouse:
+- click: Clique simples.
+- dblclick: Clique duplo.
+- mousedown/mouseup: Pressionar ou soltar o botão.
+- mousemove: Movimento do cursor.
+- mouseover/mouseout: Entrar ou sair de um elemento.
 
-🐭 Eventos de Mouse (Mouse Events)
+⌨️ Eventos de Teclado:
+- keydown: Tecla pressionada.
+- keyup: Tecla liberada.
 
-click: Disparado quando o usuário clica em um elemento.
-dblclick: Disparado com um clique duplo.
-mousedown / mouseup: Quando o botão do mouse é pressionado ou solto.
-mousemove: Sempre que o cursor do mouse se move.
-mouseover / mouseout: Quando o mouse entra ou sai de um elemento.
-mouseenter / mouseleave: Semelhante, mas não borbulha (não afeta elementos filhos).
+📄 Eventos de Formulário e Documento:
+- submit: Envio de formulário.
+- change: Alteração de valor.
+- input: Digitação em tempo real.
+- load: Carregamento completo.
+- scroll: Rolagem da página.
 
-⌨️ Eventos de Teclado (Keyboard Events)
-
-keydown: Quando uma tecla é pressionada.
-keyup: Quando uma tecla é liberada.
-keypress: Quando uma tecla caractere é pressionada (obsoleto em alguns navegadores, prefira keydown).
-
-📄 Eventos de Formulário e Documento (Document/Form Events)
-
-submit: Quando um formulário é enviado.
-change: Quando o valor de um elemento (input, select) muda.
-input: Quando o usuário digita em um campo.
-focus / blur: Quando um elemento ganha ou perde foco.
-load: Quando a página ou recurso termina de carregar.
-scroll: Quando o usuário rola a página ou um elemento.
-
-===========================================
 ===========================================
 CSS - ESTILIZAÇÃO E LAYOUT
+===========================================
 
 --- RESET E BOX MODEL ---
 * {
-    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+    box-sizing: border-box; /* Padding e border não aumentam o tamanho real do box */
     margin: 0;
     padding: 0;
 }
 
 --- GRID E LAYOUT DE IMAGENS (.grade) ---
-A classe .grade utiliza CSS Grid para criar uma galeria responsiva:
 - display: grid; => Ativa o contexto de grid.
-- grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); => Cria colunas que se ajustam sozinhas (mínimo 150px).
-- gap: 15px; => Espaçamento entre os itens da grade.
+- grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); => Colunas responsivas.
+- gap: 15px; => Espaço entre as fotos.
 
 .grade img {
-    width: 100%;       /* Ocupa toda a largura da célula do grid */
-    height: 100%;      /* Mantém a altura preenchida */
-    border-radius: 100%; /* Deixa a imagem perfeitamente circular */
-    
-    /* Box-shadow complexo para efeito de profundidade/neomorfismo */
-    box-shadow: 
-        rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, 
-        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
-        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
-        rgba(0, 0, 0, 0.06) 0px 2px 1px, 
-        rgba(0, 0, 0, 0.09) 0px 4px 2px, 
-        rgba(0, 0, 0, 0.09) 0px 8px 4px, 
-        rgba(0, 0, 0, 0.09) 0px 16px 8px, 
-        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%; /* Formato circular */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Sombra para profundidade */
 }
 
---- ESTILIZAÇÃO DO TÍTULO ---
-(Adicione aqui suas regras para h1, h2, etc.)
+--- ESTILIZAÇÃO DE TÍTULOS (H1, H2, H3) ---
+Para o tema de Pets, usamos cores que transmitem confiança e natureza:
+- h1: Centralizado, com letras maiúsculas e maior destaque (Cor principal).
+- h2: Cor secundária, servindo de divisor de seções.
+- h3: Tons neutros para sub-tópicos.
+
+--- ESTILIZAÇÃO DE ESCRITAS (P) ---
+A regra principal para o corpo do texto é a LEGIBILIDADE:
+- color: Evitar o preto puro (#000), preferir cinzas escuros para não cansar a vista.
+- line-height: 1.6; => Espaçamento essencial entre linhas para facilitar a leitura.
+- margin-bottom: 15px; => Espaço entre parágrafos.
+
+--- SELETORES ESTRUTURAIS (Pseudo-classes) ---
+O seletor :first-of-type é usado para capturar o primeiro elemento de um tipo:
+
+section p:first-of-type {
+    font-size: 14px;
+    color: #777;
+    font-style: italic; /* Ideal para estilizar as DATAS no blog automaticamente */
+}
 
 ===========================================
+EM DESENVOLVIMENTO
+===========================================
+
+Autor: Fernando Franke Morata

@@ -1,3 +1,8 @@
+:root {
+    --cor-titulo-principal: #2D5A27; /* Troque aqui para testar as opções */
+    --cor-subtitulo: #4A7C44;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,4 +28,39 @@
 }
 
 /* ================================================= */
-/* estilização do titulo (h1, h2, etc.) */
+/* estilização do titulo e escritas (h1, h2, p etc.) */
+h1 {
+    color: var(--cor-titulo-principal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: var(--cor-subtitulo);
+    border-left: 5px solid var(--cor-subtitulo); /* Um detalhe charmoso na lateral */
+    padding-left: 10px;
+    margin-top: 40px;
+}
+
+h3 {
+    color: #333; /* Mantendo um tom neutro para h3 */
+}
+
+p {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;       /* Espaçamento entre linhas (essencial!) */
+    color: #333d33;        /* Cor suave para leitura */
+    margin-bottom: 15px;   /* Afasta um parágrafo do outro */
+    font-size: 16px;       /* Tamanho padrão confortável */
+    text-align: justify;   /* Alinhamento opcional para parecer bloco */
+}
+
+/* Estilo especial para as datas (que estão em tags <p> no seu HTML) */
+section p:first-of-type {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+}
