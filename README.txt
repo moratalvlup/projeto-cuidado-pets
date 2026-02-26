@@ -154,6 +154,18 @@ CSS - ESTILIZAÇÃO E LAYOUT
     padding: 0;
 }
 
+--- SELETORES: CLASSE (.) vs ID (#) ---
+
+No projeto, utilizamos dois tipos de seletores para aplicar estilos:
+
+- .classe (.pesquisa): O ponto indica uma classe. Classes são como "etiquetas" 
+  que podem ser aplicadas a vários elementos. Usamos na <section> porque esse 
+  estilo de "caixa cinza arredondada" pode ser reaproveitado em outros lugares.
+
+- #id (#campo-filtro): A cerquilha indica um ID. O ID é um identificador ÚNICO. 
+  Utilizamos no input porque o JavaScript precisa de um alvo exclusivo para 
+  capturar a digitação, e não deve haver outro campo igual na mesma página.
+
 --- GRID E LAYOUT DE IMAGENS (.grade) ---
 - display: grid; => Ativa o contexto de grid.
 - grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); => Colunas responsivas.
