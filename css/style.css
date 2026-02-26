@@ -64,3 +64,37 @@ section p:first-of-type {
     color: #777;
     font-style: italic;
 }
+
+/* Estilo para a seção de pesquisa */
+.pesquisa {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    width: 20vw;
+}
+
+#campo-filtro {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#resultado-pesquisa {
+    list-style: none; /* Remove as bolinhas da lista */
+}
+
+#resultado-pesquisa li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+/* Efeito de destaque ao passar o mouse nos resultados */
+#resultado-pesquisa li:hover {
+    background-color: #e8f4ea; /* Um tom de verde bem clarinho */
+    cursor: default;
+}
