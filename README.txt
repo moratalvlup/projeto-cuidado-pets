@@ -133,6 +133,40 @@ section p:first-of-type {
 }
 
 ===========================================
+SISTEMA DE PESQUISA (FILTRO DINÂMICO)
+===========================================
+
+--- ARRAY DE OBJETOS ---
+Para organizar melhor os dados, utilizamos um Array de Objetos. Cada objeto {} 
+representa uma raça com múltiplas propriedades (nome e característica).
+
+--- O EVENTO 'INPUT' ---
+Diferente do 'click', o evento 'input' é disparado toda vez que o usuário 
+digita uma letra no campo de busca, permitindo uma resposta instantânea.
+
+--- PARÂMETRO (e) NA ARROW FUNCTION ---
+document.getElementById("campo-filtro").addEventListener("input", (e) => { ... })
+
+- O (e) é o objeto do evento. 
+- 'e.target.value' captura exatamente o texto que está dentro do input naquele momento.
+
+--- MÉTODOS DE STRING UTILIZADOS ---
+1. toLowerCase(): Transforma o texto em minúsculas para que a busca não 
+   diferencie "Labrador" de "labrador".
+2. includes(): Verifica se o texto digitado está contido no nome da raça.
+
+--- COMBINAÇÃO DE MÉTODOS DE ARRAY (ENCADEAMENTO) ---
+Para a pesquisa funcionar, encadeamos dois métodos:
+1. filter(): Vasculha o array 'listaRacas' e cria um novo array apenas com 
+   as raças que atendem à busca (includes).
+2. forEach(): Pega o resultado do filtro e cria os elementos <li> dinamicamente 
+   no HTML usando o textContent e o appendChild.
+
+Desta forma, a lista se "auto-limpa" (innerHTML = "") e se reconstrói a 
+cada tecla digitada.
+===========================================
+
+===========================================
 EM DESENVOLVIMENTO
 ===========================================
 
